@@ -1,10 +1,10 @@
 import UserProfile from './components/UserProfile';
 import user from './data/user.json';
-
+import { Container } from './App.styled';
 
 
 export default function App() {
-  return ( <div>
+  return ( <Container>
     <UserProfile
     name={user.username}
     tag={user.tag}
@@ -14,6 +14,6 @@ export default function App() {
     views={user.stats.views}
     likes={user.stats.likes}
     />
-  </div>
+  </Container>
   );
 }

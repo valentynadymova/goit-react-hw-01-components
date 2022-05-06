@@ -1,34 +1,35 @@
 
 import PropTypes from 'prop-types';
+import {ContainerProfile, ProfileAvatar, ProfileLi, ProfileName, ProfileStats, ProfileTag} from './UserProfile.styled'
 
 function UserProfile({name, tag, location, avatar, followers, views, likes }){
     return(
-      <div>
+      <ContainerProfile>
     <div>
-      <img
+      <ProfileAvatar
         src={avatar}
         alt="User avatar"
       />
-      <p>{name}</p>
-      <p>{tag}</p>
+      <ProfileName>{name}</ProfileName>
+      <ProfileTag>{tag}</ProfileTag>
       <p>{location}</p>
     </div>
   
-    <ul>
-      <li>
+    <ProfileStats>
+      <ProfileLi>
         <span>Followers</span>
         <span>{followers}</span>
-      </li>
-      <li>
+      </ProfileLi>
+      <ProfileLi>
         <span>Views</span>
         <span>{views}</span>
-      </li>
-      <li>
+      </ProfileLi>
+      <ProfileLi>
         <span>Likes</span>
         <span>{likes}</span>
-      </li>
-    </ul>
-  </div>
+      </ProfileLi>
+    </ProfileStats>
+  </ContainerProfile>
     )
   };
 
