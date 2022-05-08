@@ -2,7 +2,7 @@
 import PropTypes from 'prop-types';
 import {ContainerProfile, ProfileAvatar, ProfileLi, ProfileName, ProfileStats, ProfileTag} from './UserProfile.styled'
 
-function UserProfile({name, tag, location, avatar, followers, views, likes }){
+function UserProfile({name, tag, location, avatar,stats:{followers, views, likes} }){
     return(
       <ContainerProfile>
     <div>
@@ -39,9 +39,12 @@ function UserProfile({name, tag, location, avatar, followers, views, likes }){
       tag: PropTypes.string.isRequired,
       location: PropTypes.string.isRequired,
       avatar: PropTypes.string.isRequired,
-      followers: PropTypes.number.isRequired,
-      views: PropTypes.number.isRequired,
-      likes: PropTypes.number.isRequired,
+      stats: PropTypes.shape({
+        followers: PropTypes.number.isRequired,
+        views: PropTypes.number.isRequired,
+        likes: PropTypes.number.isRequired,
+      })
+    
   };
 
   export default UserProfile;
